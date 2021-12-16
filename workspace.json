@@ -1,7 +1,10 @@
 {
   "version": 2,
   "projects": {
+    "admin-web": "apps/admin-web",
+    "admin-web-e2e": "apps/admin-web-e2e",
     "consumer-web": "apps/consumer-web",
-    "consumer-web-e2e": "apps/consumer-web-e2e"
+    "consumer-web-e2e": "apps/consumer-web-e2e",
+    "header": "libs/header"
   }
 }
