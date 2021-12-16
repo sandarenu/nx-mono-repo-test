@@ -1,0 +1,28 @@
+{
+  "root": "apps/consumer-web-e2e",
+  "sourceRoot": "apps/consumer-web-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/consumer-web-e2e/cypress.json",
+        "devServerTarget": "consumer-web:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "consumer-web:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/consumer-web-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["consumer-web"]
+}
