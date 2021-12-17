@@ -8,7 +8,7 @@ import { Header } from '@sansoft/header';
 export function App() {
   return (
     <>
-      <Header />
+      <Header selectedPath='Consumer'/>
       <div />
 
       {/* START: routes */}
