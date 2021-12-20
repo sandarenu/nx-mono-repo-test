@@ -15,8 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sansoft/header": ["libs/header/src/index.ts"]
-    }
+      "@sansoft/header": ["libs/header/src/index.ts"],
+      "@sansoft/keycloak-integration": [
+        "libs/keycloak-integration/src/index.ts"
+      ],
+      "@sansoft/loader-page": ["libs/loader-page/src/index.ts"]
+    },
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true
   },
   "exclude": ["node_modules", "tmp"]
 }

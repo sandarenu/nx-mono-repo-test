@@ -5,6 +5,8 @@
     "admin-web-e2e": "apps/admin-web-e2e",
     "consumer-web": "apps/consumer-web",
     "consumer-web-e2e": "apps/consumer-web-e2e",
-    "header": "libs/header"
+    "header": "libs/header",
+    "keycloak-integration": "libs/keycloak-integration",
+    "loader-page": "libs/loader-page"
   }
 }

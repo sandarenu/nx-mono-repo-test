@@ -1,5 +1,5 @@
 import './header.module.css';
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,6 +12,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+
+import { useKeycloak } from '@react-keycloak/web';
 
 const pages = [
   {
@@ -95,10 +97,40 @@ export function Header(props: HeaderProps) {
               </a>
             ))}
           </Box>
+          <UserAuthStatus />
         </Toolbar>
       </Container>
     </AppBar>
   );
+}
+
+function UserAuthStatus() {
+  const { keycloak, initialized } = useKeycloak();
+  let [userName, setUserName] = useState('');
+
+  interface UserInfo {
+    user_name: string;
+    given_name: string;
+    email: string;
+    name: string;
+  }
+
+  function fetchUserName(){
+    if (keycloak && keycloak.authenticated) {
+      keycloak.loadUserInfo().then((userInfo) => {
+        let a = userInfo as UserInfo;
+        setUserName(a.given_name);
+      });
+    }
+
+    return userName
+  }
+
+  if (keycloak && keycloak.authenticated) {
+    return <div>{`Welcome ${fetchUserName()}`}</div>;
+  } else {
+    return <> </>;
+  }
 }
 
 export default Header;

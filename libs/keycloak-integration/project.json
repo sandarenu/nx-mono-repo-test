@@ -1,0 +1,23 @@
+{
+  "root": "libs/keycloak-integration",
+  "sourceRoot": "libs/keycloak-integration/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/keycloak-integration/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/keycloak-integration"],
+      "options": {
+        "jestConfig": "libs/keycloak-integration/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

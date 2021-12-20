@@ -1,0 +1,23 @@
+{
+  "root": "libs/loader-page",
+  "sourceRoot": "libs/loader-page/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/loader-page/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/loader-page"],
+      "options": {
+        "jestConfig": "libs/loader-page/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

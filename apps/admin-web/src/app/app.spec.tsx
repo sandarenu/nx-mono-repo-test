@@ -9,9 +9,9 @@ describe('App', () => {
     expect(baseElement).toBeTruthy();
   });
 
-  it('should have a greeting as the title', () => {
+  it('should have Admin Header', () => {
     const { getByText } = render(<App />);
 
-    expect(getByText(/Welcome admin-web/gi)).toBeTruthy();
+    expect(getByText("Admin")).toBeTruthy();
   });
 });
